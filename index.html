@@ -1,203 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asshwin Rangani - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            overflow-x: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            animation: fadeInDown 1s ease-out;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            background: #444;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            animation: fadeIn 1s ease-out;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #ffd700;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem 0;
-        }
-        .section {
-            background: #fff;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .project {
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .project h3 {
-            margin: 0;
-            color: #333;
-        }
-        .project a {
-            color: #0066cc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .project a:hover {
-            color: #004080;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            width: 100%;
-        }
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            nav a {
-                margin: 0 0.5rem;
-                font-size: 0.9rem;
-            }
-            .container {
-                width: 95%;
-            }
-            .section {
-                padding: 1.5rem;
-            }
-        }
-        @media (max-width: 480px) {
-            header {
-                padding: 1.5rem;
-            }
-            nav {
-                padding: 0.5rem;
-            }
-            nav a {
-                display: block;
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashwin Rangani - Portfolio</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #0f172a;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { color: #0ea5e9; }
+    h1, h2, h3 { font-weight: 700; }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem;
+      animation: fadeInDown 1s ease-out;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; opacity: 0.8; }
+
+    /* Nav */
+    nav {
+      background: #1e293b;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 0;
+    }
+    .section {
+      background: #1e293b;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Projects */
+    .project {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: #0f172a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+    .project h3 { margin-bottom: 0.5rem; color: #38bdf8; }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill {
+      background: #0f172a;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid #38bdf8;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      nav a { margin: 0 0.5rem; font-size: 0.9rem; }
+      .container { width: 95%; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Asshwin Rangani</h1>
-        <p>Web Developer | Portfolio</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <div class="section" id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a web developer with a passion for creating user-friendly and visually appealing websites. I specialize in front-end and back-end development, delivering projects that meet client needs.</p>
-        </div>
-        <div class="section" id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1: E-Commerce Website</h3>
-                <p>A fully functional e-commerce platform built with HTML, CSS, and JavaScript, integrated with a payment gateway.</p>
-                <p><a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a> | <a href="https://yourusername.github.io/project1" target="_blank">Live Demo</a></p>
-            </div>
-            <div class="project">
-                <h3>Project 2: Portfolio Website</h3>
-                <p>A personal portfolio to showcase my projects, built using GitHub Pages and custom CSS.</p>
-                <p><a href="https://github.com/yourusername/portfolio" target="_blank">View on GitHub</a> | <a href="https://yourusername.github.io/portfolio" target="_blank">Live Demo</a></p>
-            </div>
-            <div class="project">
-                <h3>Project 3: Task Manager App</h3>
-                <p>A web-based task manager built with React and Node.js, featuring user authentication and real-time updates.</p>
-                <p><a href="https://github.com/yourusername/task-manager" target="_blank">View on GitHub</a> | <a href="https://yourusername.github.io/task-manager" target="_blank">Live Demo</a></p>
-            </div>
-        </div>
-        <div class="section" id="contact">
-            <h2>Contact Info</h2>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
-            <p>Phone: (123) 456-7890</p>
-        </div>
+  <header>
+    <h1>Ashwin Rangani</h1>
+    <p>Full-Stack Developer | Django Enthusiast | Cloud & Automation Builder</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a passionate developer who loves solving real-world problems through 
+        technology. My work spans Django web apps, cloud deployment with AWS & Docker, 
+        face recognition systems, and automation tools.  
+        I enjoy building scalable, user-friendly solutions and continuously learning 
+        emerging technologies.
+      </p>
     </div>
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </footer>
-    <script>
-        // JavaScript for scroll animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section');
-            const options = {
-                threshold: 0.1
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, options);
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill">Python</span>
+        <span class="skill">Django</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">AWS (EC2, S3, RDS)</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Celery & Redis</span>
+        <span class="skill">NGINX</span>
+        <span class="skill">Face Recognition (dlib, DeepFace, InsightFace)</span>
+        <span class="skill">Automation (Selenium, Watchdog)</span>
+      </div>
+    </div>
+
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>📸 Photography Event Platform</h3>
+        <p>
+          A Django-powered platform where photographers upload event photos to S3, 
+          customers retrieve photos via face recognition & barcode scanning, and 
+          payments are handled with Razorpay subscriptions. Includes branding, 
+          album sharing, and real-time notifications with Celery.
+        </p>
+        <p><a href="https://github.com/yourusername/photography-app" target="_blank">View on GitHub</a></p>
+      </div>
+
+      <div class="project">
+        <h3>💬 WhatsApp Automation with Selenium</h3>
+        <p>
+          Automated system that monitors Excel receipts, extracts payment details, 
+          generates dynamic Google Pay links, and sends personalized WhatsApp 
+          messages via Selenium & persistent Chrome sessions.
+        </p>
+        <p><a href="https://github.com/yourusername/whatsapp-automation" target="_blank">View on GitHub</a></p>
+      </div>
+
+      <div class="project">
+        <h3>☁️ Dockerized Django on AWS</h3>
+        <p>
+          Full deployment pipeline for a Django app with Docker, NGINX, Redis, 
+          Celery, and PostgreSQL (RDS) on AWS EC2. Includes CI/CD setup, SSL, 
+          and domain management.
+        </p>
+        <p><a href="https://github.com/yourusername/aws-django-docker" target="_blank">View on GitHub</a></p>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:ashwin.r@example.com">ashwin.r@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ashwin Rangani. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         });
-    </script>
+      }, { threshold: 0.1 });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 </body>
 </html>
