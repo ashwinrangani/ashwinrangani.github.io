@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Asshwin Rangani - Portfolio</title>
+  <title>Ashwin Rangani - Portfolio</title>
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,17 +17,50 @@
     a { color: #38bdf8; text-decoration: none; }
     a:hover { color: #0ea5e9; }
     h1, h2, h3 { font-weight: 700; }
-    
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: #fff;
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
       animation: fadeInDown 1s ease-out;
     }
-    header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-    header p { font-size: 1.2rem; opacity: 0.8; }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+      background: #1e293b;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+    .hero .btn {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .hero .btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
 
     /* Nav */
     nav {
@@ -116,18 +149,22 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
+      .hero h1 { font-size: 2.2rem; }
       nav a { margin: 0 0.5rem; font-size: 0.9rem; }
       .container { width: 95%; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Asshwin Rangani</h1>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="your-photo.jpg" alt="Ashwin Rangani Profile">
+    <h1>Ashwin Rangani</h1>
     <p>Full-Stack Developer | Django Enthusiast | Cloud & Automation Builder</p>
-  </header>
+    <a href="#contact" class="btn">Hire Me</a>
+  </section>
 
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -135,6 +172,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Content -->
   <div class="container">
     <div class="section" id="about">
       <h2>About Me</h2>
@@ -159,7 +197,7 @@
         <span class="skill">Celery & Redis</span>
         <span class="skill">NGINX</span>
         <span class="skill">Face Recognition (dlib, DeepFace, InsightFace)</span>
-        <span class="skill">N8N Automation</span>
+        <span class="skill">Automation (Selenium, Watchdog)</span>
       </div>
     </div>
 
@@ -223,6 +261,16 @@
         });
       }, { threshold: 0.1 });
       sections.forEach(section => observer.observe(section));
+
+      // Smooth scroll for "Hire Me" button
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
     });
   </script>
 </body>
