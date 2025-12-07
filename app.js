@@ -26,17 +26,22 @@ gsap.to(".bg-gradient", {
 
 // Section reveal on scroll
 gsap.utils.toArray(".section").forEach((sec) => {
-  gsap.from(sec, {
-    scrollTrigger: {
-      trigger: sec,
-      start: "top 80%"
-    },
-    opacity: 0,
-    y: 80,
-    duration: 1,
-    ease: "power3.out"
-  });
+  gsap.fromTo(sec,
+    { opacity: 0, y: 60 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sec,
+        start: "top 90%",   // 🔥 earlier trigger
+        toggleActions: "play none none reverse"
+      }
+    }
+  );
 });
+
 
 // Magnetic button
 document.querySelectorAll(".magnetic").forEach((btn) => {
