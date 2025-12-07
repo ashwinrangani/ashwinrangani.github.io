@@ -4,172 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ashwin Rangani - Portfolio</title>
-  <style>
-    /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Segoe UI", sans-serif;
-      line-height: 1.6;
-      background: #0f172a;
-      color: #e2e8f0;
-      overflow-x: hidden;
-    }
-    a { color: #38bdf8; text-decoration: none; }
-    a:hover { color: #0ea5e9; }
-    h1, h2, h3 { font-weight: 700; }
 
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      animation: fadeInDown 1s ease-out;
-    }
-    .hero img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid #38bdf8;
-      margin-bottom: 1.5rem;
-      object-fit: cover;
-      background: #1e293b;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-    .hero .cta {
-      display: flex;
-      gap: 20px;
-    }
-    .hero .btn {
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .hero .btn:hover {
-      background: #0ea5e9;
-      transform: translateY(-2px);
-    }
-
-    /* Nav */
-    nav {
-      background: #1e293b;
-      padding: 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      margin: 0 1rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 0;
-    }
-    .section {
-      background: #1e293b;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .section h2 {
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #38bdf8;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    /* Projects */
-    .project {
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 8px;
-      background: #0f172a;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-    }
-    .project h3 { margin-bottom: 0.5rem; color: #38bdf8; }
-
-    /* Skills */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skill {
-      background: #0f172a;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      border: 1px solid #38bdf8;
-    }
-
-    /* Footer */
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      nav a { margin: 0 0.5rem; font-size: 0.9rem; }
-      .container { width: 95%; }
-    }
-  </style>
+  <!-- External CSS file (optional, will explain next) -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEh8CJmjibmVg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732343894938?e=1761177600&v=beta&t=Mns4qD1CIKLcik4fIo02N_enIMQGvpaXuSenZ7LJN9g" alt="Ashwin Rangani Profile">
-    <h1>Ashwin Rangani</h1>
-    <p>Full-Stack Developer | Django Enthusiast | Cloud & Automation Builder</p>
+    <div class="bg-gradient"></div>
+
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEh8CJmjibmVg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732343894938?e=1761177600&v=beta&t=Mns4qD1CIKLcik4fIo02N_enIMQGvpaXuSenZ7LJN9g" alt="Profile">
+
+    <h1 class="hero-title">Ashwin Rangani</h1>
+    <p class="hero-sub">Full-Stack Developer | Django Enthusiast | Cloud & Automation Builder</p>
+
     <div class="cta">
-    <a href="#contact" class="btn">Hire Me</a>
-    <a href="https://drive.google.com/your-resume-link" target="_blank" class="btn">
-  Download Resume
-</a>
+      <a href="#contact" class="btn">Hire Me</a>
+      <a href="https://drive.google.com/your-resume-link" target="_blank" class="btn magnetic">
+        Download Resume
+      </a>
     </div>
   </section>
 
@@ -186,11 +40,7 @@
     <div class="section" id="about">
       <h2>About Me</h2>
       <p>
-        I’m a passionate developer who loves solving real-world problems through 
-        technology. My work spans Django web apps, cloud deployment with AWS & Docker, 
-        face recognition systems, and automation tools.  
-        I enjoy building scalable, user-friendly solutions and continuously learning 
-        emerging technologies.
+        I’m a passionate developer who loves solving real-world problems...
       </p>
     </div>
 
@@ -201,12 +51,12 @@
         <span class="skill">Django</span>
         <span class="skill">JavaScript</span>
         <span class="skill">PostgreSQL</span>
-        <span class="skill">AWS (EC2, S3, RDS)</span>
+        <span class="skill">AWS</span>
         <span class="skill">Docker</span>
-        <span class="skill">Celery & Redis</span>
+        <span class="skill">Celery</span>
         <span class="skill">NGINX</span>
-        <span class="skill">Face Recognition (dlib, DeepFace, InsightFace)</span>
-        <span class="skill">Automation (Selenium, Watchdog)</span>
+        <span class="skill">Face Recognition</span>
+        <span class="skill">Automation</span>
       </div>
     </div>
 
@@ -215,41 +65,23 @@
 
       <div class="project">
         <h3>📸 Photography Event Platform</h3>
-        <p>
-          A Django-powered platform where photographers upload event photos to S3, 
-          customers retrieve photos via face recognition & barcode scanning, and 
-          payments are handled with Razorpay subscriptions. Includes branding, 
-          album sharing, and real-time notifications with Celery.
-        </p>
-        <p><a href="https://github.com/yourusername/photography-app" target="_blank">View on GitHub</a></p>
+        <p>A Django-powered platform...</p>
       </div>
 
       <div class="project">
-        <h3>💬 WhatsApp Automation with Selenium</h3>
-        <p>
-          Automated system that monitors Excel receipts, extracts payment details, 
-          generates dynamic Google Pay links, and sends personalized WhatsApp 
-          messages via Selenium & persistent Chrome sessions.
-        </p>
-        <p><a href="https://github.com/yourusername/whatsapp-automation" target="_blank">View on GitHub</a></p>
+        <h3>💬 WhatsApp Automation</h3>
+        <p>Automated system using Selenium...</p>
       </div>
 
       <div class="project">
         <h3>☁️ Dockerized Django on AWS</h3>
-        <p>
-          Full deployment pipeline for a Django app with Docker, NGINX, Redis, 
-          Celery, and PostgreSQL (RDS) on AWS EC2. Includes CI/CD setup, SSL, 
-          and domain management.
-        </p>
-        <p><a href="https://github.com/yourusername/aws-django-docker" target="_blank">View on GitHub</a></p>
+        <p>Full deployment pipeline...</p>
       </div>
     </div>
 
     <div class="section" id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:ashwin.r@example.com">ashwin.r@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
     </div>
   </div>
 
@@ -257,30 +89,12 @@
     <p>&copy; 2025 Ashwin Rangani. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Scroll animations
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.section');
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      sections.forEach(section => observer.observe(section));
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-      // Smooth scroll for "Hire Me" button
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-    });
-  </script>
+  <!-- External JS file (optional) -->
+  <script src="app.js"></script>
+
 </body>
 </html>
