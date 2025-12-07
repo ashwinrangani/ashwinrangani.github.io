@@ -75,6 +75,30 @@ body {
   max-width: 1100px;
   margin: auto;
 }
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+nav a {
+  color: #e2e8f0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #38bdf8;
+  transform: translateY(-3px);
+}
 
 .section {
   background: #1e293b;
@@ -83,6 +107,29 @@ body {
   border-radius: 12px;
   opacity: 0;
   transform: translateY(60px);
+  will-change: opacity, transform;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.skill {
+  background: #0ea5e9;
+  color: #0f172a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  background: #38bdf8;
 }
 
 .section h2 {
